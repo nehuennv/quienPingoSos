@@ -1,0 +1,220 @@
+// sass --watch style.scss:style.css
+
+$c-bezier: cubic-bezier(.1,.22,.8,1.13);
+
+.swal2-title,
+.swal2-content {
+  font-family: 'Poppins', sans-serif ;
+  font-size: 18px;
+}
+
+swal2-popup swal2-modal swal2-show{
+    border-radius: 100px !important;
+}
+#swal2-html-container{
+    font-size: 14px;
+}
+.custom-swal-container {
+    border-radius: 30px !important; /* Aumentar border-radius */
+  }
+.swal2-popup{
+    border-radius: 15px !important;
+}
+.swal2-actions{
+    background-color: transparent;
+}
+.swal2-confirm{
+    background-color: #283054;
+    font-weight: 500;
+
+}
+
+.swal2-height-auto {
+    height: 100% !important ;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    display: block;
+}
+html {
+    width: 100vw;
+    height: 100%;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    -webkit-text-decoration-skip: objects;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins";
+    color: white;
+    overflow: hidden;
+}
+.smalledTableContainer{
+    height: 85% !important;
+}
+.tableContainer{
+    z-index: 1;
+    height: 105%;  transition: all .5s;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background: linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(42,48,81,1) 100%);
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    .titleTable{
+        padding-block: 4vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .playersContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        padding-bottom: 10vh;
+        gap: 1rem;
+        .player{
+            min-width: 10vw;
+            max-width: 25vw;
+            min-height: 12vh;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            transition: all .5s $c-bezier;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            border: 3px solid rgba(255, 255, 255, 0.39);
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(38,43,70,1) 0%, rgba(73,92,124,1) 100%);
+            transform-style: preserve-3d;
+            .front{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                backface-visibility: hidden;
+
+                align-items: center;
+                font-size: 24px;
+                img{
+                    width: 80%;
+                    overflow: auto;
+                    height: 90%;
+                }
+            }
+            .back{
+                position: absolute;
+                border-radius: 17px;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                transform: rotateX(180deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                img{
+                    overflow: auto;
+                    height: 90%;
+                }
+            }
+            &:hover{
+                //transform: rotateX(-180deg);
+
+
+            }
+
+        }
+    }
+}
+.rotateCard{
+    transform: rotateX(-180deg) !important;
+}
+.playerSelected{
+    //transform: translateY(0%);
+    background-color: #282C3D;
+    display: flex;
+    height: 15%;
+    z-index: 2;
+    transition: all 1s;
+    box-shadow: 0px 0px 30px  #00000083;
+    align-items: flex-end;
+    justify-content: center;
+    .textPlayerSelected{
+
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+        .playerTextPrevious{
+            font-size: 14px;
+
+
+        }
+        .namePlayerSelected{
+            color: #7992BB;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+    }
+    .imgPlayerSelected{
+
+        height:115%;
+        margin-bottom:2.6vh;
+        z-index: 9;
+
+        imgPlayerSelecteSrc{
+            
+
+        }
+    }
+}
+@-webkit-keyframes flip-2-hor-top-1 {
+    0% {
+      -webkit-transform: translateY(0) rotateX(0);
+              transform: translateY(0) rotateX(0);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: translateY(-100%) rotateX(-180deg);
+              transform: translateY(-100%) rotateX(-180deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+  @keyframes flip-2-hor-top-1 {
+    0% {
+      -webkit-transform: translateY(0) rotateX(0);
+              transform: translateY(0) rotateX(0);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: translateY(-100%) rotateX(-180deg);
+              transform: translateY(-100%) rotateX(-180deg);
+      -webkit-transform-origin: 50% 100%;
+              transform-origin: 50% 100%;
+    }
+  }
+  
+.flipTopAnimation{
+    -webkit-animation: flip-2-hor-top-1 1s both;
+    animation: flip-2-hor-top-1 1s both;
+}
