@@ -84,7 +84,7 @@ let imageSelectedSrc = document.querySelector('#imageSelectedSrc')
 //Seleccion primer personaje
 let playerSelected = false
 
-
+let showPlSe = document.querySelector('.playerSelected')
 let players = document.querySelectorAll('.player')
 
 
@@ -100,6 +100,7 @@ let players = document.querySelectorAll('.player')
         let imgSrc = imgPlayer.getAttribute('src')
         playerSelected = altText
         tableContainer.classList.add('smalledTableContainer')
+        showPlSe.classList.add('playerSelectedShow')
         namePlayerSelected.textContent = playerSelected
         imageSelectedSrc.src = imgSrc;
       }

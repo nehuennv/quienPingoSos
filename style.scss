@@ -182,11 +182,17 @@ body {
 .rotateCard{
     transform: rotateX(-180deg) !important;
 }
+.playerSelectedShow{
+    height: 15% !important;
+    overflow: visible !important;
+    
+}
 .playerSelected{
     //transform: translateY(0%);
     background-color: #282C3D;
     display: flex;
-    height: 15%;
+    height: 0%;
+    overflow: hidden;
     z-index: 2;
     transition: all 1s;
     box-shadow: 0px 0px 30px  #00000083;
